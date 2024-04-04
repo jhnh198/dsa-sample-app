@@ -4,12 +4,13 @@ import { Form, ListGroup, Stack } from 'react-bootstrap'
 
 function App() {
 
+
   return (
     <Stack direction="horizontal">
       {/* add new concepts here */}
       <ListGroup className='vr'>
         <ListGroup.Item className=''>Nodes</ListGroup.Item>
-        <ListGroup.Item className=''>Nodes</ListGroup.Item>
+        <ListGroup.Item className=''>Linked List</ListGroup.Item>
       </ListGroup>
 
       {/* output of concept selection */}
