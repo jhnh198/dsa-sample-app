@@ -1,3 +1,4 @@
+import { useState } from "react"
 
 type ds_node = {
   data: string
@@ -9,18 +10,21 @@ type ds_linked_list = {
   tail: ds_node
   length: number
   ll_push: (data: ds_node["data"]) => void
-  ll_pop: 
-  ll_shift: 
-  ll_unshift:
-  ll_get: 
-  ll_set: 
-  ll_insert:  
-  ll_remove:
-  ll_reverse:
+  ll_pop: (data: ds_node["data"]) => void
+  ll_shift: (data: ds_node["data"]) => void
+  ll_unshift: (data: ds_node["data"]) => void
+  ll_get: (data: ds_node["data"]) => void
+  ll_set: (data: ds_node["data"]) => void
+  ll_insert: (data: ds_node["data"]) => void
+  ll_remove: (data: ds_node["data"]) => void
+  ll_reverse: () => void
   
 }
 
 function dsSamples(){
+
+
+
   return (
     <div>
       <h1> hi </h1>
