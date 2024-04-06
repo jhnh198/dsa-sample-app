@@ -23,8 +23,6 @@ type ds_linked_list = {
 
 function dsSamples(){
 
-
-
   return (
     <div>
       <h1> hi </h1>

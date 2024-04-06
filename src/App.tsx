@@ -3,13 +3,17 @@ import './App.css'
 import { Form, ListGroup, Stack } from 'react-bootstrap'
 
 function App() {
-
+  const [data, setData] = useState([]);
+  
+  handleOnClick(){
+    
+  }
 
   return (
     <Stack direction="horizontal">
       {/* add new concepts here */}
       <ListGroup className='vr'>
-        <ListGroup.Item className=''>Nodes</ListGroup.Item>
+        <ListGroup.Item onClick={handleOnClick} className=''>Nodes</ListGroup.Item>
         <ListGroup.Item className=''>Linked List</ListGroup.Item>
       </ListGroup>
 
