@@ -17,8 +17,7 @@ type ds_linked_list = {
   ll_set: (data: ds_node["data"]) => void
   ll_insert: (data: ds_node["data"]) => void
   ll_remove: (data: ds_node["data"]) => void
-  ll_reverse: () => void
-  
+  ll_reverse: () => void  
 }
 
 function dsSamples(){
