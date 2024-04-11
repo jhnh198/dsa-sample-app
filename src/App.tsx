@@ -27,10 +27,7 @@ function App() {
       </button>
       <div>
         {arrayOfSamples[index]}
-      </div>
-
-      {/* output of concept selection */}
-      
+      </div>   
     </Stack>      
   )
 }
