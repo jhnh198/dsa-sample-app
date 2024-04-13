@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react'
-import './App.css'
+import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, ListGroup, Stack } from 'react-bootstrap'
 import { SampleLayout } from './components/SampleLayout';
 import { DS_Node } from './components/data-structures/Node/DS_Node';
 import DS_LinkedList from './components/data-structures/Linked List/DS_LinkedList';
+import "./App.css"
 
 function App() {
   const arrayOfSamples = [
@@ -17,18 +18,22 @@ function App() {
   }
 
   return (
-    <Stack direction="horizontal">
+    <>
+    <Stack direction="horizontal" gap={3} className='m-3'>
       {/* add new concepts here */}
+      <Stack direction='vertical' gap={3} className=" mw-25 align-self-center"> 
       <button onClick={() => handleOnClick(0)}>
         Node
       </button>
-      <button onClick={() => handleOnClick(1)}>
-        Linked List
-      </button>
-      <div>
-        {arrayOfSamples[index]}
-      </div>   
-    </Stack>      
+        <button onClick={() => handleOnClick(1)}>
+          Linked List
+        </button>
+      </Stack>
+        <div className='w-50'>
+          {arrayOfSamples[index]}
+        </div>
+      </Stack>  
+    </>   
   )
 }
 
