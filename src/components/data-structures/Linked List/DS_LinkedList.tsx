@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 type ll_Node = {
   data: string
@@ -6,6 +6,10 @@ type ll_Node = {
 }
 
 export function DS_LinkedList(){
+  const [linkedList, setLinkedList] = useState({
+    data: "start",
+    dataLink: null,
+  })
 
   function createNewNode(data: string, nextNode: ll_Node){
     return {
@@ -27,7 +31,10 @@ export function DS_LinkedList(){
   }
 
   return (
-    <div>DS_LinkedList</div>
+    <div>
+      {linkedList.data}
+      {linkedList.dataLink}
+    </div>
   )
 }
 
