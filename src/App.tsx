@@ -12,7 +12,7 @@ function App() {
     <DS_LinkedList />
   ];
 
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
   function handleOnClick(i: number){
     setIndex(() => i)
   }
