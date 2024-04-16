@@ -11,6 +11,7 @@ export function DS_LinkedList(){
     dataLink: null,
   })
 
+
   function createNewNode(data: string, nextNode: ll_Node){
     return {
       data,
@@ -18,16 +19,31 @@ export function DS_LinkedList(){
     }
   }
 
+  //return all elements of the list to the screen
   function displayAllNodes(){
 
   }
 
-  function removeANode(){
+  function removeFrom(index: number){
+    //deleting the first index
+
+    //iterate over list to find desired location
+
+    //remove the element
+
+    //return the element removed
 
   }
 
-  function insertANode(){
-    
+  function insertAt(element, index){
+    //create a new node
+
+    //check to add element to the first index
+
+    //otherwise iterate through the list to find the location 
+
+    //add the new node
+
   }
 
   return (
