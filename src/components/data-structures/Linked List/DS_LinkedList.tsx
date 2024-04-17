@@ -7,7 +7,7 @@ type ll_Node = {
 
 export function DS_LinkedList(){
   const [linkedList, setLinkedList] = useState({
-    data: "start",
+    data: "head",
     dataLink: null,
   })
 
@@ -35,7 +35,7 @@ export function DS_LinkedList(){
 
   }
 
-  function insertAt(element, index){
+  function insertAt(element: ll_Node, index: number){
     //create a new node
 
     //check to add element to the first index
@@ -46,6 +46,7 @@ export function DS_LinkedList(){
 
   }
 
+  // add controls for input and functions
   return (
     <div>
       {linkedList.data}
