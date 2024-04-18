@@ -19,20 +19,21 @@ function App() {
 
   return (
     <>
-    <Stack direction="horizontal" gap={3} className='m-3'>
+    <Stack direction="horizontal" gap={3} className=' container-fluid'>
       {/* add new concepts here */}
-      <Stack direction='vertical' gap={3} className=" mw-25 align-self-center"> 
-      <button onClick={() => handleOnClick(0)}>
-        Node
-      </button>
+      <Stack direction='vertical' gap={3} className="w-l mw-50 align-self-center"> 
+        <button onClick={() => handleOnClick(0)}>
+          Node
+        </button>
         <button onClick={() => handleOnClick(1)}>
           Linked List
         </button>
       </Stack>
-        <div className='w-50'>
-          {arrayOfSamples[index]}
-        </div>
-      </Stack>  
+
+      <div className='mw-50'>
+        {arrayOfSamples[index]}
+      </div>
+    </Stack>  
     </>   
   )
 }
