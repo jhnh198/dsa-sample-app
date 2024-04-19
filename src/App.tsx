@@ -19,9 +19,9 @@ function App() {
 
   return (
     <>
-    <Stack direction="horizontal" gap={3} className=' container-fluid'>
+    <Stack direction="horizontal" gap={3} className="list-container">
       {/* add new concepts here */}
-      <Stack direction='vertical' gap={3} className="w-l mw-50 align-self-center"> 
+      <Stack direction='vertical' gap={3} className="list-buttons"> 
         <button onClick={() => handleOnClick(0)}>
           Node
         </button>
@@ -29,11 +29,10 @@ function App() {
           Linked List
         </button>
       </Stack>
-
-      <div className='mw-50'>
+    </Stack>  
+    <div className='app-content'>
         {arrayOfSamples[index]}
       </div>
-    </Stack>  
     </>   
   )
 }
