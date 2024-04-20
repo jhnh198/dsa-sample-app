@@ -1,4 +1,5 @@
 import {useRef, useState } from "react"
+import "./DS_Node.css"
 
 //todo: likely just make linked list and remove the node or address it in the ll
 export function DS_Node(){
@@ -27,13 +28,20 @@ export function DS_Node(){
       It is the building block of a Linked List and other data structures.
       This is a single node. A linked node is in the linked list sample.
     </p>
-    <input type="text" ref={dataRef}/>
-    <button onClick={handleOnClick}> Set Node Data </button>
+    <div className="output-container">
+    <div className="output-controls">
+      <input type="text" ref={dataRef}/>
+      <button onClick={handleOnClick}> Set Node Data </button>
+      <button onClick={addDataLink}> Add Data Link </button>
+    </div>
 
-    {/*todo: set up button to add a data link with the input */}
-    <button onClick={addDataLink}> Add Data Link </button>
-      Data: {nodeData} <br/>
-      Link: {nodeDataLink}
+    <div className="output-content">
+      <p> Data: {nodeData} </p> 
+      <p> Link: {nodeDataLink} </p>
+    </div>
+    </div>
+
+
   </div>
   )
 }
