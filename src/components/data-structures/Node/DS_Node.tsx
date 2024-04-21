@@ -29,19 +29,17 @@ export function DS_Node(){
       This is a single node. A linked node is in the linked list sample.
     </p>
     <div className="output-container">
-    <div className="output-controls">
-      <input type="text" ref={dataRef}/>
-      <button onClick={handleOnClick}> Set Node Data </button>
-      <button onClick={addDataLink}> Add Data Link </button>
-    </div>
+      <div className="output-controls">
+        <input type="text" ref={dataRef}/>
+        <button onClick={handleOnClick}> Set Node Data </button>
+        <button onClick={addDataLink}> Add Data Link </button>
+      </div>
 
-    <div className="output-content">
-      <p> Data: {nodeData} </p> 
-      <p> Link: {nodeDataLink} </p>
+      <div className="output-content">
+        <p> Data: {nodeData} </p> 
+        <p> Link: {nodeDataLink} </p>
+      </div>
     </div>
-    </div>
-
-
   </div>
   )
 }
