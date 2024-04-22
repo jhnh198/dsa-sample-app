@@ -1,21 +1,33 @@
 import React, { useState } from 'react'
 
 type ll_Node = {
-  data: string
-  dataLink: ll_Node
+  data: string | null
+  next: ll_Node | null
 }
 
 export function DS_LinkedList(){
-  const [linkedList, setLinkedList] = useState({
+  const [linkedList, setLinkedList] = useState<ll_Node>(
+  { 
+    data: null,
+    next: null
   })
 
 
-  function createNewNode(head: string, nextNode: ll_Node){
-    if(head == null) return 
-    return {
-      data,
-      dataLink: nextNode
+  function createNewNode(head: ll_Node, element: string){
+    const temp : ll_Node = {
+      data: element,
+      next: null
     }
+
+    if(head == null) {
+      return temp;
+    } else {
+      //look for last node and add to end
+      while(head.next != null){
+
+      }
+    }
+
   }
 
   //return all elements of the list to the screen
@@ -54,10 +66,16 @@ export function DS_LinkedList(){
 
   // add controls for input and functions
   return (
-    <div>
-      {linkedList.data}
-      {linkedList.dataLink}
-    </div>
+    <>
+      <div>
+        A linked list is a chain of nodes
+      </div>
+      <div>
+        {linkedList.data}
+        {linkedList.next}
+      </div>
+    </>
+
   )
 }
 
