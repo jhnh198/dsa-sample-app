@@ -5,29 +5,36 @@ type ll_Node = {
   next: ll_Node | null
 }
 
+type dsa_linkedList = {
+  head: ll_Node | null
+}
+
 export function DS_LinkedList(){
-  const [linkedList, setLinkedList] = useState<ll_Node>(
-  { 
-    data: null,
-    next: null
+  const [linkedList, setLinkedList] = useState<dsa_linkedList>({ 
+    head: null
   })
 
-
-  function createNewNode(head: ll_Node, element: string){
-    const temp : ll_Node = {
+  function createNewNode(element: string){
+    const temp: ll_Node = {
       data: element,
       next: null
-    }
+    } 
+    return temp;
+  }
+
+  function insertNode(head: ll_Node, element: string){
+    const temp = createNewNode(element)
 
     if(head == null) {
       return temp;
     } else {
       //look for last node and add to end
       while(head.next != null){
-
+        head = head.next;
       }
-    }
 
+      head.next = temp;
+    }
   }
 
   //return all elements of the list to the screen
@@ -65,14 +72,18 @@ export function DS_LinkedList(){
   }
 
   // add controls for input and functions
+  //todo: can't assign null to react element
   return (
     <>
       <div>
-        A linked list is a chain of nodes
+        A linked list is a chain of nodes. It starts with a single node, called the head node
+        and this head node contains a link to another element. This next element also contains a 
+        link to another element. 
       </div>
       <div>
-        {linkedList.data}
-        {linkedList.next}
+        
+        {}
+        
       </div>
     </>
 
