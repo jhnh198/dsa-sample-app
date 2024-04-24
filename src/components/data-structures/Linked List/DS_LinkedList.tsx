@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useRef, useState } from 'react'
 
 type ll_Node = {
   data: string | null
@@ -13,6 +13,8 @@ export function DS_LinkedList(){
   const [linkedList, setLinkedList] = useState<dsa_linkedList>({ 
     head: null
   })
+
+  const dataRef = useRef<HTMLInputElement>(null);
 
   function createNewNode(element: string){
     const temp: ll_Node = {
@@ -53,15 +55,9 @@ export function DS_LinkedList(){
 
   }
 
-  function insertAt(element: ll_Node, index: number){
+  function insertAt(element: string, index: number){
     //create a new node
-    const temp : ll_Node = {
-      data: element.data,
-      dataLink: {
-        data: '',
-        dataLink: '',
-      }
-    }
+    const temp = createNewNode(element);
 
     //check to add element to the first index
 
@@ -72,7 +68,6 @@ export function DS_LinkedList(){
   }
 
   // add controls for input and functions
-  //todo: can't assign null to react element
   return (
     <>
       <div>
@@ -82,7 +77,17 @@ export function DS_LinkedList(){
       </div>
       <div>
         
-        {}
+        {linkedList.head &&  
+          <>
+            <div>
+              {linkedList.head.data}
+            </div>
+          </>
+        }
+        <button>Insert Node</button>
+        <button>Remove Node </button>
+        <button>Insert Node At Index</button>
+        <input type="text" ref={dataRef}/>
         
       </div>
     </>
