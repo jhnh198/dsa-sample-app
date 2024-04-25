@@ -10,8 +10,13 @@ type dsa_linkedList = {
 }
 
 export function DS_LinkedList(){
+  const test_node: ll_Node = {
+    data: "head",
+    next: null
+  }
+
   const [linkedList, setLinkedList] = useState<dsa_linkedList>({ 
-    head: null
+    head: test_node
   })
 
   const dataRef = useRef<HTMLInputElement>(null);
@@ -41,7 +46,11 @@ export function DS_LinkedList(){
 
   //return all elements of the list to the screen
   function displayAllNodes(){
+    if(linkedList.head == null) return
+    while(linkedList.head != null){
+      <div> Linked List Node {linkedList.head.data} </div>
 
+    }
   }
 
   function removeFrom(index: number){
@@ -80,13 +89,16 @@ export function DS_LinkedList(){
         {linkedList.head &&  
           <>
             <div>
-              {linkedList.head.data}
+              Linked List Head: {linkedList.head.data}
             </div>
           </>
         }
-        <button>Insert Node</button>
-        <button>Remove Node </button>
-        <button>Insert Node At Index</button>
+        <div>
+          <button>Insert Node</button>
+          <button>Remove Node </button>
+          <button>Insert Node At Index</button>
+        </div>
+
         <input type="text" ref={dataRef}/>
         
       </div>

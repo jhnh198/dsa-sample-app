@@ -1,7 +1,6 @@
 import {useRef, useState } from "react"
 import "./DS_Node.css"
 
-//todo: likely just make linked list and remove the node or address it in the ll
 export function DS_Node(){
   const [nodeData, setNodeData] = useState('');
   const [nodeDataLink, setNodeDataLink] = useState('');
