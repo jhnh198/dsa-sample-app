@@ -89,6 +89,7 @@ export function DS_LinkedList(){
         {linkedList.head &&  
           <>
             <div>
+
               Linked List Head: {linkedList.head.data}
             </div>
           </>
