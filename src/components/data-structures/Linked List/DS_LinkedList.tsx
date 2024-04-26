@@ -95,16 +95,13 @@ export function DS_LinkedList(){
           </>
         }
         <div>
-          <button>Insert Node</button>
+          <button onClick={() => insertNode(linkedList.head, dataRef?.current.value)}>Insert Node</button>
           <button>Remove Node </button>
           <button>Insert Node At Index</button>
         </div>
-
         <input type="text" ref={dataRef}/>
-        
       </div>
     </>
-
   )
 }
 
