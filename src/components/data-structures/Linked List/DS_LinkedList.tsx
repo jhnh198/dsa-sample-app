@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { DS_LinkedListNode } from './DS_LinkedListNode'
 
 type ll_Node = {
   data: string
@@ -47,7 +48,7 @@ export function DS_LinkedList(){
 
   //return all elements of the list to the screen
   function displayAllNodes(){
-    if(linkedList.head == null) return
+    if(linkedList.head == null || linkedListRef.current == null) return
     while(linkedList.head != null){
       linkedListRef.current.appendChild(<div> Linked List Node {linkedList.head.data} </div>);
 
