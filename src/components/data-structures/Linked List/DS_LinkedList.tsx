@@ -1,25 +1,26 @@
 import { useRef, useState } from 'react'
 
 type ll_Node = {
-  data: string | null
-  next?: ll_Node | null
+  data: string
+  next?: ll_Node 
 }
 
 type dsa_linkedList = {
-  head?: ll_Node | null
+  head?: ll_Node
 }
 
+//todo: implement useEffect to run the while loop when linkedList changes
 export function DS_LinkedList(){
   const test_node: ll_Node = {
     data: "head",
-    next: null
   }
 
   const [linkedList, setLinkedList] = useState<dsa_linkedList>({ 
     head: test_node
   })
 
-  const dataRef = useRef<HTMLInputElement>(null);
+  const dataRef = useRef<HTMLInputElement>();
+  const linkedListRef = useRef<HTMLDivElement>();
 
   function createNewNode(element: string){
     const temp: ll_Node = {
@@ -48,7 +49,7 @@ export function DS_LinkedList(){
   function displayAllNodes(){
     if(linkedList.head == null) return
     while(linkedList.head != null){
-      <div> Linked List Node {linkedList.head.data} </div>
+      linkedListRef.current.appendChild(<div> Linked List Node {linkedList.head.data} </div>);
 
     }
   }
@@ -88,15 +89,16 @@ export function DS_LinkedList(){
         
         {linkedList.head &&  
           <>
-            <div>
-              Linked List Head: {linkedList.head.data}
+            <div ref={linkedListRef}>
             </div>
           </>
         }
         <div>
+          <button> Create Node </button>
           <button onClick={insertNode}>Insert Node</button>
-          <button>Remove Node </button>
-          <button>Insert Node At Index</button>
+          <button> Remove Node </button>
+          <button> Insert Node At Index </button>
+          <button> Display all nodes </button>
         </div>
         <input type="text" ref={dataRef}/>
       </div>
