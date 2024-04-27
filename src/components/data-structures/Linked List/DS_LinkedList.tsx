@@ -2,11 +2,11 @@ import { useRef, useState } from 'react'
 
 type ll_Node = {
   data: string | null
-  next: ll_Node | null
+  next?: ll_Node | null
 }
 
 type dsa_linkedList = {
-  head: ll_Node | null
+  head?: ll_Node | null
 }
 
 export function DS_LinkedList(){
@@ -29,8 +29,8 @@ export function DS_LinkedList(){
     return temp;
   }
 
-  function insertNode(head: ll_Node, element: string){
-    const temp = createNewNode(element)
+  function insertNode(){
+    if(dataRef.current.value == null) return  
 
     if(head == null) {
       return temp;
@@ -89,13 +89,12 @@ export function DS_LinkedList(){
         {linkedList.head &&  
           <>
             <div>
-
               Linked List Head: {linkedList.head.data}
             </div>
           </>
         }
         <div>
-          <button onClick={() => insertNode(linkedList.head, dataRef?.current.value)}>Insert Node</button>
+          <button onClick={insertNode}>Insert Node</button>
           <button>Remove Node </button>
           <button>Insert Node At Index</button>
         </div>
