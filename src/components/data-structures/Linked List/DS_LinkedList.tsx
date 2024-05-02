@@ -1,13 +1,14 @@
 import { useRef, useState } from 'react'
 import { DS_LinkedListNode } from './DS_LinkedListNode'
+import React from 'react'
 
 type ll_Node = {
   data: string
-  next?: ll_Node 
+  next?: ll_Node | null 
 }
 
 type dsa_linkedList = {
-  head?: ll_Node
+  head?: ll_Node | null
 }
 
 //todo: implement useEffect to run the while loop when linkedList changes
@@ -21,7 +22,7 @@ export function DS_LinkedList(){
   })
 
   const dataRef = useRef<HTMLInputElement>();
-  const linkedListRef = useRef<HTMLDivElement>();
+  const linkedListRef = React.RefObject<HTMLInputElement>();
 
   function createNewNode(element: string){
     const temp: ll_Node = {
@@ -31,10 +32,10 @@ export function DS_LinkedList(){
     return temp;
   }
 
-  function insertNode(){
-    if(dataRef.current.value == null) return  
+  function insertNode(temp : ll_Node){
+    if(dataRef.current?.value == null) return  
 
-    if(head == null) {
+    if(linkedList?.head == null) {
       return temp;
     } else {
       //look for last node and add to end
