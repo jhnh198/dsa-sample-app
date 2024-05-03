@@ -38,12 +38,12 @@ export function DS_LinkedList(){
     if(linkedList?.head == null) {
       return temp;
     } else {
-      //look for last node and add to end
-      while(head.next != null){
-        head = head.next;
+      let currentNode = linkedList.head
+      while(currentNode.next != null){
+        currentNode = currentNode.next;
       }
 
-      head.next = temp;
+      currentNode.next = temp;
     }
   }
 
@@ -56,15 +56,33 @@ export function DS_LinkedList(){
     }
   }
 
-  function removeFrom(index: number){
-    //deleting the first index
+  //todo: variable names can be better; multiple deleted nodes
+  function deleteMatchingValues(value: string){
+    if(!linkedList.head) return null
 
-    //iterate over list to find desired location
+    let deletedNode = null;
 
-    //remove the element
+    //process list to remove head and other values
+    while (linkedList.head && linkedList.head.data === value){
+      deletedNode = linkedList.head
+      linkedList.head = linkedList.head.next
+    }
 
-    //return the element removed
+    let currentNode = linkedList.head
 
+    //todo: re-evaluate this; 
+    if (currentNode !== null){
+      while(currentNode?.next){
+        if(currentNode.next.data === value){
+          deletedNode = currentNode.next;
+          currentNode.next = currentNode.next.next;
+        } else {
+          currentNode = currentNode.next;
+        }
+      }
+    }    
+
+    return deletedNode;
   }
 
   function insertAt(element: string, index: number){
