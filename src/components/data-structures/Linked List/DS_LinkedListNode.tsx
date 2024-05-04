@@ -1,5 +1,11 @@
-export function DS_LinkedListNode(data: string){
+import { ll_Node } from "./DS_LinkedList"
+
+export function DS_LinkedListNode(data: string, next: ll_Node){
   return (
-    <h1>{data}</h1>
+    <>
+      <p>{data}</p>
+      <DS_LinkedListNode next={next} />
+    </>
+
   )
 }

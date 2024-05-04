@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { DS_LinkedListNode } from './DS_LinkedListNode'
 import React from 'react'
 
-type ll_Node = {
+export type ll_Node = {
   data: string
   next?: ll_Node | null 
 }
@@ -22,7 +22,7 @@ export function DS_LinkedList(){
   })
 
   const dataRef = useRef<HTMLInputElement>();
-  const linkedListRef = React.RefObject<HTMLInputElement>();
+  const linkedListRef = React.useRef<HTMLInputElement>();
 
   function createNewNode(element: string){
     const temp: ll_Node = {
@@ -96,6 +96,8 @@ export function DS_LinkedList(){
     //add the new node
 
   }
+
+  displayAllNodes();
 
   // add controls for input and functions
   return (
