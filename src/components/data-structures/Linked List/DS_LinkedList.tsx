@@ -13,8 +13,16 @@ type dsa_linkedList = {
 
 //todo: implement useEffect to run the while loop when linkedList changes
 export function DS_LinkedList(){
+  const tail_node: ll_Node = {
+    data: "tail node"
+  }
+  const next_node: ll_Node = {
+    data: "next node",
+    next: tail_node
+  }
   const test_node: ll_Node = {
     data: "head",
+    next: next_node
   }
 
   const [linkedList, setLinkedList] = useState<dsa_linkedList>({ 
@@ -50,8 +58,17 @@ export function DS_LinkedList(){
   //return all elements of the list to the screen
   function displayAllNodes(){
     if(linkedList.head == null || linkedListRef.current == null) return
+
+/*     const children = this.myData.map((val) => (
+      <button id={val.key}>{val.name}</button>
+    )); */
+
+
     while(linkedList.head != null){
-      linkedListRef.current.appendChild(<div> Linked List Node {linkedList.head.data} </div>);
+      const p = document.createElement("div");
+
+      //document.body.appendChild(p);
+      linkedListRef.current.appendChild(`${linkedList.head}`);
 
     }
   }
