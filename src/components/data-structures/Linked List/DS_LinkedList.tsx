@@ -4,7 +4,7 @@ import React from 'react'
 
 export type ll_Node = {
   data: string
-  next?: ll_Node | null 
+  next?: ll_Node | null
 }
 
 type dsa_linkedList = {
@@ -57,7 +57,17 @@ export function DS_LinkedList(){
 
   //return all elements of the list to the screen
   function displayAllNodes(){
-    if(linkedList.head == null || linkedListRef.current == null) return
+    if(linkedList.head == null) return null
+
+    let currentNode = linkedList.head;
+    let myData = []
+
+    while(currentNode != null){
+      myData.push(currentNode.data)
+      currentNode = currentNode.next;
+    }
+
+    console.log(myData)
 
 /*     const children = this.myData.map((val) => (
       <button id={val.key}>{val.name}</button>
@@ -65,10 +75,7 @@ export function DS_LinkedList(){
 
 
     while(linkedList.head != null){
-      const p = document.createElement("div");
-
-      //document.body.appendChild(p);
-      linkedListRef.current.appendChild(`${linkedList.head}`);
+      const ds = <DS_LinkedListNode data={linkedList.head.data} /> 
 
     }
   }
@@ -114,7 +121,7 @@ export function DS_LinkedList(){
 
   }
 
-  displayAllNodes();
+  //displayAllNodes();
 
   // add controls for input and functions
   return (
@@ -137,7 +144,7 @@ export function DS_LinkedList(){
           <button onClick={insertNode}>Insert Node</button>
           <button> Remove Node </button>
           <button> Insert Node At Index </button>
-          <button> Display all nodes </button>
+          <button onClick={displayAllNodes}> Display all nodes </button>
         </div>
         <input type="text" ref={dataRef}/>
       </div>
